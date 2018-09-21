@@ -45,4 +45,4 @@ namespace :unicorn do
   task force_stop: :evironment do
     force_stop_unicorn
   end
-  
+end
