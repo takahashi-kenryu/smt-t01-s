@@ -1,7 +1,7 @@
 namespace :unicorn do
   task :environment do
     set :unicorn_pid, "#{current_path}tmp/pids/unicorn.pid"
-    set :unicorn_config, "#{current_path}/config/unicorn.rb"
+    set :unicorn_config, "#{current_path}/config/unicorn/production.rb"
   end
 
   def start_unicorn
@@ -24,25 +24,33 @@ namespace :unicorn do
 
   desc "Start unicorn server"
   task start: :environment do
-    start_unicorn
+    on roles(:app) do
+      start_unicorn
+    end
   end
 
   desc "Stop unicorn server gracefully"
   task stop: :environment do
-    stop_unicorn
+    on roles(:app) do
+      stop_unicorn
+    end
   end
 
   desc "Restart unicorn server gracefully"
   task restart: :environment do
-    if test("[ -f #{fetch(:unicorn_pid)} ]")
-      reload_unicorn
-    else
-      start_unicorn
+    on roles(:app) do
+      if test("[ -f #{fetch(:unicorn_pid)} ]")
+        reload_unicorn
+      else
+        start_unicorn
+      end
     end
   end
 
   desc "Stop unicorn server immediately"
   task force_stop: :evironment do
-    force_stop_unicorn
+    on roles(:app) do
+      force_stop_unicorn
+    end
   end
 end
