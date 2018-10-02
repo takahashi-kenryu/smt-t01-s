@@ -1,6 +1,6 @@
 class EchosController < ApplicationController
   
   def index
-    render json: 'hello world!'
+    render json: 'deploy test'
   end
 end
