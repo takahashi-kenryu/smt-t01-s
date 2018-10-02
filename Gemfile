@@ -101,7 +101,6 @@ gem 'unicorn'
 # gem 'kaminari'                # ページネーション
 gem 'seed-fu'                 # DB初期データ投入拡張
 gem 'rails-i18n'              # 多言語化
-gem 'dotenv-rails'            # 環境定義の簡便化
 gem 'device_detector'         # UserAgent解析
 # gem 'redis-rails'             # セッションやキャッシュをredisで管理
 # gem 'carrierwave'             # ファイルアップロード
@@ -137,6 +136,7 @@ gem 'device_detector'         # UserAgent解析
 group :development, :test do
 #  gem 'faker'
   gem 'timecop' # 時間操作
+  gem 'dotenv-rails'            # 環境定義の簡便化
   
   # テスト環境
 #  gem 'rspec-rails'
