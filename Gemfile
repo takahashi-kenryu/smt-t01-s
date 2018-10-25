@@ -21,11 +21,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+# gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -164,7 +164,6 @@ group :development do
 
   gem 'better_errors' # エラーページの情報がリッチになる
   gem 'binding_of_caller' # エラーページでコンソールが使える
-
 end
 
 group :test do
@@ -185,3 +184,5 @@ end
 # gem 'libreconv'   # フォーマット変換
 # gem 'axlsx_rails' # jbuilder風のxlsx生成
 # gem 'rubyXL'      # xlsx編集
+
+gem 'versionist'       # バージョン管理機能付きAPIジェネレータの提供（雛形、スケルトンの作成）
