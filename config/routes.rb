@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  api_version(:module => "V1", :path => {:value => "v1"}) do
+    resources :endpoint
+  end
+  resources :points
+  resources :users
   root to: 'echos#index'
-
-  resources :echos
-  resources :scores
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
